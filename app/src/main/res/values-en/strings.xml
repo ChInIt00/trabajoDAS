@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">trabajoDAS</string>
+    <string name="ajustes">Settings</string>
+    <string name="idioma">Language</string>
+    <string name="agregar_libro">Add Book</string>
+    <string name="mostrar_ocultar_leidos">Show/Hide read</string>
+    <string name="modo_apariencia">Appearance mode</string>
+    <string name="claro">Light</string>
+    <string name="oscuro">Dark</string>
+    <string name="automatico">Automatic</string>
+    <string name="autor">Author: %1$s</string>
+    <string name="genero">Genre: %1$s</string>
+    <string name="valoracion">Rating: %1$d</string>
+    <string name="leido_si">Read: Yes</string>
+    <string name="leido_no">Read: No</string>
+    <string name="buscar_google">Search on Google</string>
+</resources>

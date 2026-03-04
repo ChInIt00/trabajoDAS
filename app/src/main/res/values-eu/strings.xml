@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">trabajoDAS</string>
+    <string name="ajustes">Ezarpenak</string>
+    <string name="idioma">Hizkuntza</string>
+    <string name="agregar_libro">Liburua gehitu</string>
+    <string name="mostrar_ocultar_leidos">Irakurritakoak erakutsi/ezkutatu</string>
+    <string name="modo_apariencia">Itxura modua</string>
+    <string name="claro">Argia</string>
+    <string name="oscuro">Iluna</string>
+    <string name="automatico">Automatikoa</string>
+    <string name="autor">Egilea: %1$s</string>
+    <string name="genero">Generoa: %1$s</string>
+    <string name="valoracion">Balorazioa: %1$d</string>
+    <string name="leido_si">Irakurrita: Bai</string>
+    <string name="leido_no">Irakurrita: Ez</string>
+    <string name="buscar_google">Bilatu Google-n</string>
+</resources>

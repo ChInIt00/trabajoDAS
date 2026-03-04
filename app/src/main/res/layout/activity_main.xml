@@ -13,14 +13,39 @@
         android:layout_above="@+id/btnTest"
         android:padding="8dp"/>
 
-    <!-- Botón de prueba para insertar un libro -->
+    <LinearLayout
+        android:id="@+id/layoutBotones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="16dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnTest"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/agregar_libro"/>
+
+        <Button
+            android:id="@+id/btnAjustes"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/ajustes"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
     <Button
-        android:id="@+id/btnTest"
+        android:id="@+id/btnToggleFiltro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insertar libro de prueba"
-        android:layout_alignParentBottom="true"
+        android:text="@string/mostrar_ocultar_leidos"
+        android:layout_above="@id/layoutBotones"
         android:layout_centerHorizontal="true"
-        android:layout_margin="16dp"/>
+        android:layout_marginBottom="8dp"/>
 
 </RelativeLayout>

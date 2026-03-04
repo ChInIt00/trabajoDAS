@@ -1,5 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Colores principales -->
+    <color name="colorPrimary">#00B894</color>          <!-- Verde suave -->
+    <color name="colorPrimaryVariant">#019875</color>   <!-- Verde oscuro -->
+    <color name="colorOnPrimary">#FFFFFF</color>        <!-- Texto sobre primary -->
+
+    <!-- Fondo -->
+    <color name="colorBackground">#FFFFFF</color>       <!-- Blanco -->
+    <color name="colorOnBackground">#2D3436</color>    <!-- Gris oscuro texto -->
+    <!-- Fondo oscuro -->
+    <color name="colorBackgroundDark">#121212</color>      <!-- gris muy oscuro -->
+    <color name="colorOnBackgroundDark">#E0E0E0</color>   <!-- texto claro -->
+
+    <!-- Botones -->
+    <color name="colorButtonBackground">#00B894</color>
+    <color name="colorButtonText">#FFFFFF</color>
+    <!-- Botones -->
+    <color name="colorButtonBackgroundDark">#1DB954</color> <!-- verde Letterbox oscuro -->
+    <color name="colorButtonTextDark">#FFFFFF</color>
+
+    <!-- Tarjetas / RecyclerView -->
+    <color name="colorCardBackground">#F1F2F6</color>
+    <color name="colorCardText">#2D3436</color>
+    <!-- Tarjetas / RecyclerView -->
+    <color name="colorCardBackgroundDark">#1E1E1E</color>
+    <color name="colorCardTextDark">#E0E0E0</color>
 </resources>

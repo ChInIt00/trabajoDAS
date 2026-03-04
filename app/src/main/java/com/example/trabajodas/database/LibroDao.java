@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
+import androidx.room.Delete;
 
 import com.example.trabajodas.model.Libro;
 
@@ -23,4 +24,8 @@ public interface LibroDao {
     // Actualizar un libro
     @Update
     void updateLibro(Libro libro);
+
+    // Borrar libro
+    @Delete
+    void deleteLibro(Libro libro);
 }

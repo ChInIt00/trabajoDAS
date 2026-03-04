@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">trabajoDAS</string>
+
+    <string name="ajustes">Ajustes</string>
+    <string name="idioma">Idioma</string>
+    <string name="agregar_libro">Agregar libro</string>
+    <string name="mostrar_ocultar_leidos">Mostrar/Ocultar leídos</string>
+    <string name="modo_apariencia">Modo de apariencia</string>
+    <string name="claro">Claro</string>
+    <string name="oscuro">Oscuro</string>
+    <string name="automatico">Automático</string>
+    <string name="autor">Autor: %1$s</string>
+    <string name="genero">Género: %1$s</string>
+    <string name="valoracion">Valoración: %1$d</string>
+    <string name="leido_si">Leído: Sí</string>
+    <string name="leido_no">Leído: No</string>
+    <string name="buscar_google">Buscar en Google</string>
+
+    <string-array name="idiomas_array">
+        <item>Español</item>
+        <item>English</item>
+        <item>Euskera</item>
+    </string-array>
 </resources>
