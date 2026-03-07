@@ -4,17 +4,47 @@
     <string name="ajustes">Ajustes</string>
     <string name="idioma">Idioma</string>
     <string name="agregar_libro">Agregar libro</string>
+    <string name="editar_libro">Editar libro</string>
     <string name="mostrar_ocultar_leidos">Mostrar/Ocultar leídos</string>
     <string name="modo_apariencia">Modo de apariencia</string>
     <string name="claro">Claro</string>
     <string name="oscuro">Oscuro</string>
     <string name="automatico">Automático</string>
+    <string name="titulo">Titulo: %1$s</string>
     <string name="autor">Autor: %1$s</string>
     <string name="genero">Género: %1$s</string>
     <string name="valoracion">Valoración: %1$d</string>
+    <string name="leido">Leído</string>
     <string name="leido_si">Leído: Sí</string>
     <string name="leido_no">Leído: No</string>
     <string name="buscar_google">Buscar en Google</string>
+    <string name="valoracionAgregarLibro">Valoración (0–5)</string>
+    <string name="tituloAgregarLibro">Título</string>
+    <string name="autorAgregarLibro">Autor</string>
+    <string name="generoAgregarLibro">Género</string>
+    <string name="eliminar_libro">Eliminar libro</string>
+    <string name="deseas_eliminar_libro">Deseas eliminar: </string>
+    <string name="si">Sí</string>
+    <string name="no">No</string>
+    <string name="libro_eliminado">Libro eliminado</string>
+    <string name="se_ha_eliminado">Se ha eliminado: </string>
+    <string name="cancelar">Cancelar</string>
+    <string name="mostrar_solo_leidos">Mostrando solo leídos</string>
+    <string name="mostrar_todos">Mostrando todos</string>
+    <string name="agregar">Agregar</string>
+    <string name="libro_agregado">Libro agregado</string>
+    <string name="se_ha_agregado">Se ha agregado: </string>
+    <string name="guardar">Guardar</string>
+    <string name="libro_actualizado">Libro actualizado</string>
+    <string name="libro_leido">Libro leído</string>
+    <string name="marcado_leido">Has marcado como leído: </string>
+    <string name="libros">Libros</string>
+    <string name="noti_libro">Notificaciones de libros</string>
+    <string name="permiso_noti_si">Permiso de notificaciones concedido</string>
+    <string name="permiso_noti_no">Permiso de notificaciones denegado</string>
+    <string name="no_aplicacion_abrir">No hay aplicación para abrir el enlace</string>
+
+
 
     <string-array name="idiomas_array">
         <item>Español</item>

@@ -106,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemLongClick(Libro libro) {
                 // Click largo → eliminar libro
                 new androidx.appcompat.app.AlertDialog.Builder(MainActivity.this)
-                        .setTitle("Eliminar libro")
-                        .setMessage("¿Deseas eliminar \"" + libro.getTitulo() + "\"?")
-                        .setPositiveButton("Sí", (dialog, which) -> {
+                        .setTitle(R.string.eliminar_libro)
+                        .setMessage(getString(R.string.deseas_eliminar_libro) + " " + libro.getTitulo())
+                        .setPositiveButton(R.string.si, (dialog, which) -> {
                             // Borrar libro de la base de datos
                             AppDatabase db = AppDatabase.getInstance(MainActivity.this);
                             db.libroDao().deleteLibro(libro);
@@ -116,10 +116,10 @@ public class MainActivity extends AppCompatActivity {
                             // Actualizar lista y RecyclerView respetando el filtro
                             cargarLibros();
 
-                            Toast.makeText(MainActivity.this, "Libro eliminado", Toast.LENGTH_SHORT).show();
-                            mostrarNotificacion("Libro eliminado", "Se ha eliminado: " + libro.getTitulo());
+                            Toast.makeText(MainActivity.this, R.string.libro_eliminado, Toast.LENGTH_SHORT).show();
+                            mostrarNotificacion(getString(R.string.libro_eliminado), getString(R.string.se_ha_eliminado) + " " + libro.getTitulo());
                         })
-                        .setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss())
+                        .setNegativeButton(R.string.cancelar, (dialog, which) -> dialog.dismiss())
                         .show();
             }
         });
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             cargarLibros();
 
             Toast.makeText(this,
-                    !actual ? "Mostrando solo leídos" : "Mostrando todos",
+                    !actual ? R.string.mostrar_solo_leidos : R.string.mostrar_todos,
                     Toast.LENGTH_SHORT).show();
         });
 
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarDialogoAgregarLibro() {
         // Crear builder del diálogo
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Agregar libro");
+        builder.setTitle(R.string.agregar_libro);
 
         // Inflar layout personalizado
         View view = getLayoutInflater().inflate(R.layout.dialog_agregar_libro, null);
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox cbLeido = view.findViewById(R.id.cbLeido);
 
         // Botón Aceptar
-        builder.setPositiveButton("Agregar", (dialog, which) -> {
+        builder.setPositiveButton(R.string.agregar, (dialog, which) -> {
             String titulo = etTitulo.getText().toString().trim();
             String autor = etAutor.getText().toString().trim();
             String genero = etGenero.getText().toString().trim();
@@ -191,12 +191,12 @@ public class MainActivity extends AppCompatActivity {
             // Actualizar lista y RecyclerView respetando el filtro
             cargarLibros();
 
-            Toast.makeText(this, "Libro agregado", Toast.LENGTH_SHORT).show();
-            mostrarNotificacion("Libro agregado", "Se ha agregado: " + libro.getTitulo());
+            Toast.makeText(this, R.string.libro_agregado, Toast.LENGTH_SHORT).show();
+            mostrarNotificacion(getString(R.string.libro_agregado), getString(R.string.se_ha_agregado) + " " + libro.getTitulo());
         });
 
         // Botón Cancelar
-        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton(R.string.cancelar, (dialog, which) -> dialog.dismiss());
 
         // Mostrar diálogo
         builder.show();
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void mostrarDialogoEditarLibro(Libro libro) {
         androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
-        builder.setTitle("Editar libro");
+        builder.setTitle(R.string.editar_libro);
 
         // Inflar layout personalizado
         View view = getLayoutInflater().inflate(R.layout.dialog_agregar_libro, null);
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
         cbLeido.setChecked(libro.isLeido());
 
         // Botón Guardar
-        builder.setPositiveButton("Guardar", (dialog, which) -> {
+        builder.setPositiveButton(R.string.guardar, (dialog, which) -> {
             libro.setTitulo(etTitulo.getText().toString().trim());
             libro.setAutor(etAutor.getText().toString().trim());
             libro.setGenero(etGenero.getText().toString().trim());
@@ -243,17 +243,17 @@ public class MainActivity extends AppCompatActivity {
             // Actualizar lista y RecyclerView respetando el filtro
             cargarLibros();
 
-            Toast.makeText(this, "Libro actualizado", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.libro_actualizado, Toast.LENGTH_SHORT).show();
 
-            mostrarNotificacion("Libro agregado", "Se ha agregado: " + libro.getTitulo());
+            mostrarNotificacion(getString(R.string.libro_agregado), getString(R.string.se_ha_agregado) + " " + libro.getTitulo());
 
             if (libro.isLeido()) {
-                mostrarNotificacion("Libro leído", "Has marcado como leído: " + libro.getTitulo());
+                mostrarNotificacion(getString(R.string.libro_leido), getString(R.string.marcado_leido) + " " + libro.getTitulo());
             }
         });
 
         // Botón Cancelar
-        builder.setNegativeButton("Cancelar", (dialog, which) -> dialog.dismiss());
+        builder.setNegativeButton(R.string.cancelar, (dialog, which) -> dialog.dismiss());
 
         // Mostrar diálogo
         builder.show();
@@ -261,8 +261,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void crearCanalNotificacion() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence nombre = "Libros";
-            String descripcion = "Notificaciones de libros";
+            CharSequence nombre = getString(R.string.libros);
+            String descripcion = getString(R.string.noti_libro);
             int importancia = NotificationManager.IMPORTANCE_DEFAULT;
 
             NotificationChannel canal = new NotificationChannel(CANAL_ID, nombre, importancia);
@@ -294,9 +294,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (requestCode == PERMISO_NOTIFICACIONES) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permiso de notificaciones concedido", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permiso_noti_si, Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Permiso de notificaciones denegado", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.permiso_noti_no, Toast.LENGTH_SHORT).show();
             }
         }
     }

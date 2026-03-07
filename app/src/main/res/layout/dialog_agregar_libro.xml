@@ -10,31 +10,31 @@
         android:id="@+id/etTitulo"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Título"/>
+        android:hint="@string/tituloAgregarLibro"/>
 
     <EditText
         android:id="@+id/etAutor"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Autor"/>
+        android:hint="@string/autorAgregarLibro"/>
 
     <EditText
         android:id="@+id/etGenero"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Género"/>
+        android:hint="@string/generoAgregarLibro"/>
 
     <EditText
         android:id="@+id/etValoracion"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:hint="Valoración (1-5)"
+        android:hint="@string/valoracionAgregarLibro"
         android:inputType="number"/>
 
     <CheckBox
         android:id="@+id/cbLeido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Leído"/>
+        android:text="@string/leido"/>
 
 </LinearLayout>

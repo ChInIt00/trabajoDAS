@@ -18,7 +18,7 @@
             android:id="@+id/tvTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Título"
+            android:text="@string/titulo"
             android:textSize="18sp"
             android:textStyle="bold"/>
 
@@ -26,19 +26,19 @@
             android:id="@+id/tvAutor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Autor"/>
+            android:text="@string/autor"/>
 
         <TextView
             android:id="@+id/tvGenero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Género"/>
+            android:text="@string/genero"/>
 
         <TextView
             android:id="@+id/tvValoracion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Valoración: 0"/>
+            android:text="@string/valoracion"/>
 
         <TextView
             android:id="@+id/tvEstado"

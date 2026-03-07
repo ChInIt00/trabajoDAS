@@ -94,7 +94,7 @@ public class LibroAdapter extends RecyclerView.Adapter<LibroAdapter.LibroViewHol
             try {
                 activity.startActivity(intent);
             } catch (ActivityNotFoundException e) {
-                Toast.makeText(activity, "No hay aplicación para abrir el enlace", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, R.string.no_aplicacion_abrir, Toast.LENGTH_SHORT).show();
             }
         });
     }
