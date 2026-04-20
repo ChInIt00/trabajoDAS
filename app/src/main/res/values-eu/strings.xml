@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">trabajoDAS</string>
-    <string name="ajustes">Ezarpenak</string>
+    <string name="app_name">LecterBox</string>
+    <string name="ajustes">Aukera gehiago</string>
     <string name="idioma">Hizkuntza</string>
     <string name="agregar_libro">Liburua gehitu</string>
     <string name="editar_libro">Liburua editatu</string>
@@ -43,5 +43,25 @@
     <string name="permiso_noti_si">Jakinarazpenetarako baimena emanda</string>
     <string name="permiso_noti_no">Jakinarazpenetarako baimena ez emanda</string>
     <string name="no_aplicacion_abrir">Ez dago aplikaziorik esteka irekitzeko</string>
+    <string name="login_correcto">Login zuzena</string>
+    <string name="usuario">Erabiltzailea</string>
+    <string name="contraseña">Pasahitza</string>
+    <string name="iniciar_sesion">Saioa hasi</string>
+    <string name="registrarse">Hasieratu</string>
+    <string name="bienvenido">Kaixo</string>
+    <string name="error_al_guardar">Errorea gordetzerakoan</string>
+    <string name="libros_leidos">Irakurritako liburuak:</string>
+    <string name="librerias_cercanas">Hurbil dauden liburu-dendak ikusi</string>
+    <string name="gestionar_usuario">Erabiltzailea kudeatu</string>
+    <string name="cerrar_sesion">Saioa itxi</string>
+    <string name="introduce_contraseña">Pasahitza idatzi</string>
+    <string name="espera_subir_foto">Itxaron argazkia igo arte</string>
+    <string name="cambio_contraseña">Pasahitza aldatuta. Barriro hasi saioa</string>
+    <string name="error_cambio_contraseña">Errore bat gertatu da pasahitza aldatzerakoan</string>
+    <string name="cambiar_foto">Argazkia aldatu</string>
+    <string name="nueva_contraseña">Pasahitza berria</string>
+    <string name="cambiar_contraseña">Pasahitza aldatu</string>
+    <string name="hola">Kaixo</string>
+    <string name="notificacion_libreria">Ez ahaztu hurbilen duzun liburu-denda bisitatzen!</string>
 
 </resources>

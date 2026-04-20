@@ -2,6 +2,7 @@ package com.example.trabajodas.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -112,6 +113,36 @@ public class SettingsActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+        Button btnMapa = findViewById(R.id.btnMapa);
+
+        btnMapa.setOnClickListener(v -> {
+            Intent intent = new Intent(this, MapsActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnUsuario = findViewById(R.id.btnUsuario);
+
+        btnUsuario.setOnClickListener(v -> {
+            Intent intent = new Intent(SettingsActivity.this, UserActivity.class);
+            startActivity(intent);
+        });
+
+        Button btnLogout = findViewById(R.id.btnLogout);
+
+        btnLogout.setOnClickListener(v -> {
+
+            // 1. Borrar sesión
+            getSharedPreferences("user", MODE_PRIVATE)
+                    .edit()
+                    .clear()
+                    .apply();
+
+            // 2. Ir a login y limpiar pila
+            Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
         });
     }
 }

@@ -10,7 +10,7 @@
         android:id="@+id/recyclerViewLibros"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btnTest"
+        android:layout_above="@id/layoutBotones"
         android:padding="8dp"/>
 
     <LinearLayout
@@ -47,5 +47,4 @@
         android:layout_above="@id/layoutBotones"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"/>
-
 </RelativeLayout>

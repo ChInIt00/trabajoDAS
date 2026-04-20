@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">trabajoDAS</string>
+    <string name="app_name">LecterBox</string>
 
-    <string name="ajustes">Ajustes</string>
+    <string name="ajustes">Más opciones</string>
     <string name="idioma">Idioma</string>
     <string name="agregar_libro">Agregar libro</string>
     <string name="editar_libro">Editar libro</string>
@@ -43,7 +43,26 @@
     <string name="permiso_noti_si">Permiso de notificaciones concedido</string>
     <string name="permiso_noti_no">Permiso de notificaciones denegado</string>
     <string name="no_aplicacion_abrir">No hay aplicación para abrir el enlace</string>
-
+    <string name="login_correcto">Login correcto</string>
+    <string name="usuario">Usuario</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="iniciar_sesion">Iniciar sesión</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="error_al_guardar">Error al guardar</string>
+    <string name="libros_leidos">Libros leídos:</string>
+    <string name="librerias_cercanas">Ver librerías cercanas</string>
+    <string name="gestionar_usuario">Gestionar usuario</string>
+    <string name="cerrar_sesion">Cerrar sesión</string>
+    <string name="introduce_contraseña">Introduce contraseña</string>
+    <string name="espera_subir_foto">Espera a que la foto se suba</string>
+    <string name="cambio_contraseña">Contraseña cambiada. Vuelve a iniciar sesión</string>
+    <string name="error_cambio_contraseña">Error al cambiar la contraseña</string>
+    <string name="cambiar_foto">Cambiar foto</string>
+    <string name="nueva_contraseña">Nueva contraseña</string>
+    <string name="cambiar_contraseña">Cambiar contraseña</string>
+    <string name="hola">Hola</string>
+    <string name="notificacion_libreria">¡No olvides visitar tu libreria más cercana!</string>
 
 
     <string-array name="idiomas_array">
@@ -51,4 +70,8 @@
         <item>English</item>
         <item>Euskera</item>
     </string-array>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
 </resources>

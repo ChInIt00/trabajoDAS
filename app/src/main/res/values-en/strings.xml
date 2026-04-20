@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">trabajoDAS</string>
-    <string name="ajustes">Settings</string>
+    <string name="app_name">LecterBox</string>
+    <string name="ajustes">More options</string>
     <string name="idioma">Language</string>
     <string name="agregar_libro">Add Book</string>
     <string name="editar_libro">Edit book</string>
@@ -43,5 +43,25 @@
     <string name="permiso_noti_si">Notification permission granted</string>
     <string name="permiso_noti_no">Notification permission denied</string>
     <string name="no_aplicacion_abrir">There is no app to open the link</string>
+    <string name="login_correcto">Login successful</string>
+    <string name="usuario">User</string>
+    <string name="contraseña">Password</string>
+    <string name="iniciar_sesion">Log in</string>
+    <string name="registrarse">Register</string>
+    <string name="bienvenido">Welcome</string>
+    <string name="error_al_guardar">Error saving</string>
+    <string name="libros_leidos">Books read:</string>
+    <string name="librerias_cercanas">See nearby bookstores</string>
+    <string name="gestionar_usuario">Manage user</string>
+    <string name="cerrar_sesion">Log out</string>
+    <string name="introduce_contraseña">Enter password</string>
+    <string name="espera_subir_foto">Wait while the photo uploads</string>
+    <string name="cambio_contraseña">Password changed. Log in again</string>
+    <string name="error_cambio_contraseña">An error occured changing the password</string>
+    <string name="cambiar_foto">Change image</string>
+    <string name="nueva_contraseña">New password</string>
+    <string name="cambiar_contraseña">Change password</string>
+    <string name="hola">Hello</string>
+    <string name="notificacion_libreria">Do not forget to visit your nearest bookstore!</string>
 
 </resources>
