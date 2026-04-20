@@ -1,0 +1,29 @@
+<?php
+header('Content-Type: application/json');
+
+$conn = new mysqli("db", "admin", "test", "database");
+
+if ($conn->connect_error) {
+    echo json_encode(["success" => false]);
+    exit();
+}
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$oldUsername = $data["oldUsername"];
+$newUsername = $data["newUsername"];
+
+//actualizar usuario
+$stmt1 = $conn->prepare("UPDATE users SET username=? WHERE username=?");
+$stmt1->bind_param("ss", $newUsername, $oldUsername);
+$stmt1->execute();
+
+// actualizar libros también
+$stmt2 = $conn->prepare("UPDATE libros SET username=? WHERE username=?");
+$stmt2->bind_param("ss", $newUsername, $oldUsername);
+$stmt2->execute();
+
+echo json_encode(["success" => true]);
+
+$conn->close();
+?>

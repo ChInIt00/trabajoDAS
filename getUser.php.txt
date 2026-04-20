@@ -1,0 +1,13 @@
+<?php
+$conn = new mysqli("db", "admin", "test", "database");
+
+header('Content-Type: application/json');
+
+$username = $_GET["username"];
+
+$result = $conn->query("SELECT foto_perfil FROM users WHERE username='$username'");
+
+$row = $result->fetch_assoc();
+
+echo json_encode($row);
+?>

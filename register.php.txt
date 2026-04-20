@@ -1,0 +1,33 @@
+<?php
+$conn = new mysqli("db", "admin", "test", "database");
+
+if ($conn->connect_error) {
+    die(json_encode(["success" => false, "error" => $conn->connect_error]));
+}
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$user = $data["username"] ?? "";
+$pass = $data["password"] ?? "";
+
+if ($user == "" || $pass == "") {
+    die(json_encode(["success" => false, "error" => "datos vacíos"]));
+}
+
+$pass = password_hash($pass, PASSWORD_DEFAULT);
+
+$stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
+
+if (!$stmt) {
+    die(json_encode(["success" => false, "error" => $conn->error]));
+}
+
+$stmt->bind_param("ss", $user, $pass);
+
+$ok = $stmt->execute();
+
+echo json_encode([
+    "success" => $ok,
+    "error" => $ok ? null : $stmt->error
+]);
+?>

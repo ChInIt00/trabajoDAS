@@ -1,0 +1,17 @@
+<?php
+$conn = new mysqli("db", "admin", "test", "database");
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$titulo = $data["titulo"];
+$autor = $data["autor"];
+$genero = $data["genero"];
+$valoracion = $data["valoracion"];
+$leido = $data["leido"];
+$username = $data["username"];
+
+$stmt = $conn->prepare("INSERT INTO libros (titulo, autor, genero, valoracion, leido, username) VALUES (?, ?, ?>
+$stmt->bind_param("sssiss", $titulo, $autor, $genero, $valoracion, $leido, $username);
+
+echo json_encode(["success" => $stmt->execute()]);
+?>

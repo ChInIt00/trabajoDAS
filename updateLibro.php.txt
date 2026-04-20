@@ -1,0 +1,46 @@
+<?php
+$conn = new mysqli("db", "admin", "test", "database");
+
+if ($conn->connect_error) {
+    die(json_encode(["success"=>false, "error"=>$conn->connect_error]));
+}
+
+$data = json_decode(file_get_contents("php://input"), true);
+
+$id = $data["id"];
+$titulo = $data["titulo"];
+$autor = $data["autor"];
+$genero = $data["genero"];
+$valoracion = $data["valoracion"];
+$leido = $data["leido"];
+
+$stmt = $conn->prepare("
+    UPDATE libros 
+    SET titulo=?, autor=?, genero=?, valoracion=?, leido=? 
+    WHERE id=?
+");
+
+if (!$stmt) {
+    die(json_encode([
+        "success" => false,
+        "error" => $conn->error
+    ]));
+}
+
+$stmt->bind_param("sssiii",
+    $titulo,
+    $autor,
+    $genero,
+    $valoracion,
+    $leido,
+    $id
+);
+
+$ok = $stmt->execute();
+
+echo json_encode([
+    "success" => $ok,
+    "affected" => $stmt->affected_rows,
+    "error" => $stmt->error
+]);
+?>

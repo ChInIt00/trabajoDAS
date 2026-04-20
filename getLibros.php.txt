@@ -1,0 +1,30 @@
+<?php
+header('Content-Type: application/json');
+
+$conn = new mysqli("db", "admin", "test", "database");
+
+if ($conn->connect_error) {
+    echo json_encode(["success" => false, "message" => "DB error"]);
+    exit();
+}
+
+$username = $_GET["username"] ?? "";
+
+// Seguridad básica
+$stmt = $conn->prepare("SELECT id, titulo, autor, genero, valoracion, leido FROM libros WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+$libros = [];
+
+while ($row = $result->fetch_assoc()) {
+    $libros[] = $row;
+}
+
+echo json_encode($libros);
+
+$stmt->close();
+$conn->close();
+?>

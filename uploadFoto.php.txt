@@ -1,0 +1,70 @@
+<?php
+$conn = new mysqli("db", "admin", "test", "database");
+
+header('Content-Type: application/json');
+
+if ($conn->connect_error) {
+    echo json_encode(["success" => false, "error" => "DB error"]);
+    exit;
+}
+
+$username = $_GET["username"] ?? null;
+
+if (!$username) {
+    echo json_encode(["success" => false, "error" => "No username"]);
+    exit;
+}
+
+// RUTA ABSOLUTA (IMPORTANTE)
+$targetDir = __DIR__ . "/uploads/";
+
+if (!file_exists($targetDir)) {
+    mkdir($targetDir, 0777, true);
+}
+
+$fileName = $username . "_" . time() . ".jpg";
+$targetFile = $targetDir . $fileName;
+
+// leer input
+$data = file_get_contents("php://input");
+
+if (!$data) {
+    echo json_encode(["success" => false, "error" => "Empty input"]);
+    exit;
+}
+$stmtOld = $conn->prepare("SELECT foto_perfil FROM users WHERE username=?");
+$stmtOld->bind_param("s", $username);
+$stmtOld->execute();
+
+$result = $stmtOld->get_result();
+$row = $result->fetch_assoc();
+
+$oldFile = $row["foto_perfil"] ?? null;
+
+if ($oldFile) {
+    $oldPath = $targetDir . $oldFile;
+
+    if (file_exists($oldPath)) {
+        unlink($oldPath);
+    }
+}
+
+// guardar archivo
+file_put_contents($targetFile, $data);
+
+// comprobar que se guardó
+if (!file_exists($targetFile)) {
+    echo json_encode(["success" => false, "error" => "File not saved"]);
+    exit;
+}
+
+// actualizar BD
+$stmt = $conn->prepare("UPDATE users SET foto_perfil=? WHERE username=?");
+$stmt->bind_param("ss", $fileName, $username);
+$stmt->execute();
+
+echo json_encode([
+    "success" => true,
+    "file" => $fileName
+]);
+?>
